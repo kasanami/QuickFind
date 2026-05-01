@@ -27,6 +27,8 @@ namespace QuickFind.Tests
             Assert.Equal(9,  Hash64.RuneToShift(new(0b1010_0000)));
             Assert.Equal(10, Hash64.RuneToShift(new(0b1100_0000)));
             Assert.Equal(11, Hash64.RuneToShift(new(0b1110_0000)));
+
+            Assert.Equal(60, Hash64.RuneToShift(new(0x10FFFF)));
         }
     }
 }

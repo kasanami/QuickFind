@@ -57,11 +57,16 @@ namespace QuickFind
         /// U+0080～U+07FF 各国文字    ラテン文字拡張、ギリシャ文字など
         /// U+0800～U+FFFF BMP 日本語、中国語、インド系文字など
         /// U+10000～U+10FFFF 追加面 絵文字、古代文字など
+        /// 仮にU+10FFFFを超える場合は0を返す。
         /// </summary>
         public static int RuneToShift(Rune rune)
         {
             int codePoint = rune.Value;
             if (codePoint <= 0x1F)
+            {
+                return 0;
+            }
+            else if (codePoint > 0x10FFFF)
             {
                 return 0;
             }
