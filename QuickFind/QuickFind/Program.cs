@@ -19,7 +19,7 @@ for (int i = 32; i < 512; i++)
 {
     Rune rune = new((uint)i);
     //Console.WriteLine($"{rune}\t{rune.Value:X}\t{Hash64.RuneToShift(rune)}");
-    Console.WriteLine($"{rune}\t{rune.Value:X}\t{Hash64.RuneToHash64(rune):X}");
+    Console.WriteLine($"{rune}\t{rune.Value:X}\t{Hash64.RuneToShift(rune)}\t{Hash64.RuneToHash64(rune):X}");
 }
 #endif
 
